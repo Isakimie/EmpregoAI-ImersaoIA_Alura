@@ -1,31 +1,43 @@
 # EmpregoAI
-## Agente criado para a Imersão IA da Alura 2026
+### Seu Orquestrador Inteligente de Carreira e Recolocação Profissional
 
-Este projeto guia você na criação de um agente orquestrador inteligente utilizando o editor de código **Zed** e a API do **OpenRouter**.
+O **EmpregoAI** é um ecossistema inteligente de suporte à carreira desenvolvido especialmente para a **Imersão IA Alura 2026**. O projeto utiliza o conceito de **Sistemas Multiagentes** para automatizar e otimizar a busca por recolocação profissional, capacitação técnica e preparação para processos seletivos.
+
+A aplicação foi construída utilizando o editor de código de alta performance **Zed** e centraliza a inteligência de seus agentes através da API do **OpenRouter**, permitindo flexibilidade e robustez na escolha dos modelos de linguagem (LLMs).
 
 ---
+## 📋 Passo a Passo para Execução
 
-### 1.0 Preparação
+## 1.0 Preparação
 
-1. **Instale o Zed:** Baixe e instale o editor através do site oficial [zed.dev](https://zed.dev/).
+### 1.1 Instalação e Configuração Inicial
+
+1. **Instale o Zed:** Baixe e instale o editor de código através do site oficial [zed.dev](https://zed.dev/).
 2. **Configure o OpenRouter:** Crie uma conta em [openrouter.ai](https://openrouter.ai/), gere sua chave de API e copie-a.
-   > **Dica de Segurança:** Salve sua chave em um gerenciador de senhas criptografado ou em um local seguro de sua preferência.
+   > 🔐 **Dica de Segurança:** Salve suas chaves em um gerenciador de senhas criptografado ou em um local seguro de sua preferência. Nunca exponha suas credenciais diretamente no código.
 
-Pra não temos nossa IA bloqueada, vamos utilizar o FireCrawl
-1. Baixe o vmv do Node js https://github.com/coreybutler/nvm-windows
-Ao fim da instalação abrirá um Power Sheell e para não limitar o binário desconhecido, entao execute o comando:
+### 1.2 Configuração do Firecrawl (Web Scraping Avançado)
+
+Para garantir que a nossa IA consiga buscar dados na web sem sofrer bloqueios ou CAPTCHAs, vamos utilizar o **Firecrawl**. Siga os passos abaixo para preparar o seu ambiente:
+
+1. **Instale o NVM para Windows:** Baixe o instalador do gerenciador de versões do Node.js através do link: [github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows).
+2. **Liberar Execução de Scripts:** Ao final da instalação, abra o **PowerShell** e execute o comando abaixo para permitir a execução de scripts locais sem restrições de bloqueio:
+```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-então no novo Power Shell aberto execute:
+```
+3. **Instalar e Ativar o Node.js:** No mesmo terminal do PowerShell, instale a versão mais recente do Node.js para habilitar globalmente os comandos npm e npx:
+```
 nvm install latest
-e execute novamente apenas afirmando para usar a ultima versao:
-nvm use 26.3.0
-E agora você poderá usar todas as versoes do seu node seja ele como mpn ou npx
+```
+Caso a versão seja diferente, confirme a ativação para usar a versão mais recente instalada, no meu caso: nvm use 26.3.0.
+Pronto! Agora você tem total liberdade para gerenciar e usar qualquer versão do Node.js via terminal.
 
-Agora vamos criar uma conta no https://www.firecrawl.dev/
-Copiei o CLI e execute no Power Shell
+4. **Inicializar o Firecrawl CLI:** Crie uma conta gratuita em firecrawl.dev, obtenha sua API Key e execute o comando no PowerShell para inicializar:
+```
 npx -y firecrawl-cli@latest init --all -k [SUA CHAVE DE API]
----
-
+```
+**************************
+PAREI AQUI
 ### 1.1 Configuração do Ambiente e do Provedor de IA
 
 1. Com o Zed instalado, crie uma pasta(diretório) no seu computador para armazenar os arquivos do projeto.
