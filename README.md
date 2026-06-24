@@ -25,14 +25,15 @@ Para garantir que a nossa IA consiga buscar dados na web sem sofrer bloqueios ou
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-3. **Instalar e Ativar o Node.js:** No mesmo terminal do PowerShell, instale a versão mais recente do Node.js para habilitar globalmente os comandos npm e npx:
+3. **Instalar e Ativar o Node.js:** No mesmo terminal do PowerShell, instale a versão mais recente do Node.js para habilitar globalmente os comandos `npm` e `npx`:
 ```
 nvm install latest
 ```
-Caso a versão seja diferente, confirme a ativação para usar a versão mais recente instalada, no meu caso: nvm use 26.3.0.
-Pronto! Agora você tem total liberdade para gerenciar e usar qualquer versão do Node.js via terminal.
+Caso a versão seja diferente, confirme a ativação para usar a versão mais recente instalada, no meu caso:  `nvm use  26.3.0`.
 
-4. **Inicializar o Firecrawl CLI:** Crie uma conta gratuita em firecrawl.dev, obtenha sua API Key e execute o comando no PowerShell para inicializar:
+Isso garante que você tenha total liberdade para gerenciar e usar qualquer versão do Node.js via terminal.
+
+4. **Inicializar o Firecrawl CLI:** Crie uma conta gratuita em [firecrawl.dev](firecrawl.dev), obtenha sua API Key e execute o comando no PowerShell para inicializar:
 ```
 npx -y firecrawl-cli@latest init --all -k [SUA CHAVE DE API]
 ```
