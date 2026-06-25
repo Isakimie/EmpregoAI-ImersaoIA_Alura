@@ -37,35 +37,55 @@ Isso garante que você tenha total liberdade para gerenciar e usar qualquer vers
 ```
 npx -y firecrawl-cli@latest init --all -k [SUA CHAVE DE API]
 ```
-**************************
-PAREI AQUI
-### 1.1 Configuração do Ambiente e do Provedor de IA
+### 1.3 Configuração do Ambiente e do Provedor de IA
 
-1. Com o Zed instalado, crie uma pasta(diretório) no seu computador para armazenar os arquivos do projeto.
-2. Abra essa pasta no Zed.
-3. Acesse o painel do assistente do Zed clicando no ícone de **estrelas** no canto inferior esquerdo (ou use o atalho `Ctrl + B`).
-4. Clique em **Configure Providers**, selecione **OpenRouter**, cole a sua chave de API e pressione `Enter`.
-5. No painel superior, clique em **Auto Router** (ou no seletor de modelos) e escolha um modelo gratuito (*free*) de sua preferência.
+Com as ferramentas preparadas, siga os passos abaixo para configurar o seu ambiente de desenvolvimento e conectar a inteligência artificial dentro do editor:
 
----
+1. **Criar a Pasta do Projeto:** Crie um novo diretório (pasta) em seu computador para armazenar todos os arquivos do **EmpregoAI**.
+2. **Abrir no Zed:** Inicialize o editor Zed e abra a pasta que você acabou de criar.
+3. **Ativar o Assistente de IA:** Acesse o painel do assistente integrado clicando no ícone de **estrelas** localizado no canto inferior esquerdo da tela (ou utilize o atalho `Ctrl + B`).
+4. **Configurar o Provedor (OpenRouter):** No painel do assistente, clique em **Configure Providers**, selecione a opção **OpenRouter**, cole a sua chave de API gerada anteriormente e pressione `Enter`.
+5. **Selecionar o Modelo:** No menu superior do painel de IA, clique em **Auto Router** (ou no seletor de modelos) e escolha o modelo gratuito (*free*) de sua preferência para começar a rodar os agentes.
+ > 💡 Neste projeto, foi utilizado o *****, mas a escolha do modelo fica a seu critério, visto que a disponibilidade de modelos gratuitos pode variar ao longo do tempo
 
-### 2.0 Planejamento do Agente (Estrutura)
+## 2.0 Planejamento do Agente (Estrutura)
 
 Para criar um agente eficiente, precisamos delegar as funções da maneira mais detalhada possível. Nosso planejamento seguirá a seguinte estrutura:
 
 * **a)** O que vamos criar, onde e para qual finalidade (contexto geral de maneira objetiva).
 * **b)** Tipo de orquestrador e objetivo (é recomendado dar um nome para esse orquestrador para facilitar).
 * **c)** Descrição do primeiro agente a ser criado (solicitando que ele **não** seja criado agora, para implementarmos pouco a pouco).
-* **d)** Especialização do agente dando uma habilidade (*skill*) a ele (isso é o que difere um agente de IA de um chatbot comum).
-* **e)** Rotina do maestro em uma outra lista para definir como funcionará o fluxo de trabalho (*playbook*).
+* **d)** Especialização do agente, atribuindo uma habilidade (*skill*) a ele (isso é o que difere um agente de IA de um chatbot comum).
+* **e)** Rotina do maestro em uma lista separada para definir como funcionará o fluxo de trabalho (*playbook*).
 * **f)** Passo a passo detalhado do que o maestro deve fazer.
-* **g)** o plano prototipo esta pronto pode rodar
+* **g)** O plano protótipo está pronto e pode rodar.
 
-Abaixo segue o meu script para criação do projeto EmpregoAI
-Imagem_01
+Abaixo segue o script para a criação do projeto **EmpregoAI**:
 
-Exclua o plano.md gerado e susbstitua por
 ```
+Vamos construir um plano no arquivo plano.md para criar um orquestrador que busca vagas de emprego:
+
+- precisamos ter um agente no qual consiga se comunicar conosco, vamos chama-lo de maestro ele deve levar
+nossas demandas para agentes especificos
+- o primeiro a ser criado deve ser o agente que busca vagas de emprego, mas crie ele agora, apenas o coloque
+no plano
+- temos que dar um habilidade (skills) ao maestro de como delegar trabalho usando a sua ferramenta nativa de
+despacho de agentes
+
+0 playbook do maestro deve seguir a seguinte sequencia:
+
+- Uma saudação ao usuário
+- Deve conferir se existe um quiz das habilidades e preferencia do usuario
+- Caso não exista, enviar as 5 perguntas para conhecer o usuário (anote as perguntas no plano)
+- Disponibilizar um menu de opções ao usuario:
+a) responder o quiz
+b)buscar vagas de emprego futuramente
+```
+
+Exclua o arquivo `plano.md` gerado e substitua-o por:
+> 💡 Essa substituição é necessária para eliminar diretrizes genéricas e garantir que o orquestrador siga estritamente as regras, o escopo e a arquitetura personalizada que definimos para o projeto.
+
+``````
 
 # Maestro — Orquestrador
 
@@ -258,8 +278,11 @@ As opções A, B e C ainda não funcionam — serão implementadas nas fases seg
 
 Maestro totalmente funcional com quiz e menu.
 
-```
-```
+``````
+> *Para consultar a estrutura de referência oficial da Imersão, você também pode acessar o [Plano da Aula 1 Original](https://github.com/guilhermeonrails/i-agente-ia/blob/main/PLAN-AULA-1.md).*
+
+
+***************PAREI AQUI
 
 então peça para "implementar o @plano.md"
 Aceite a criação dos agentes
